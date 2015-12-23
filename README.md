@@ -33,6 +33,7 @@ This is built with [NW.js](https://github.com/nwjs/nw.js/) (previously known as 
 
 ![Details](https://cloud.githubusercontent.com/assets/4667129/11984434/0d2c5908-a970-11e5-9466-7e749c5edb72.jpg)
 
+![Summary](https://cloud.githubusercontent.com/assets/4667129/11986830/0f0a5a90-a989-11e5-810c-9fb7fa3fe439.jpg)
 
 ![Criteria](https://cloud.githubusercontent.com/assets/4667129/11984433/0d25c890-a970-11e5-95a4-c20fe7d316cb.jpg)
 
