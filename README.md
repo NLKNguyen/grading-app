@@ -1,6 +1,14 @@
 # Grading App
+[![license](https://img.shields.io/github/license/NLKNguyen/grading-app.svg?maxAge=2592000)](https://github.com/NLKNguyen/grading-app/blob/master/LICENSE) [![](https://img.shields.io/github/issues-raw/NLKNguyen/grading-app.svg?maxAge=2592000)](https://github.com/NLKNguyen/grading-app/issues) [![](https://img.shields.io/github/issues-closed-raw/NLKNguyen/grading-app.svg?maxAge=2592000)](https://github.com/NLKNguyen/grading-app/issues)  [![Travis CI Build Status](https://travis-ci.org/NLKNguyen/grading-app.svg?branch=master)](https://travis-ci.org/NLKNguyen/grading-app)[![GitHub release](https://img.shields.io/github/release/NLKNguyen/grading-app.svg)](https://github.com/NLKNguyen/grading-app/releases)
+<!--[![Github All Releases](https://img.shields.io/github/downloads/NLKNguyen/grading-app/total.svg)](https://github.com/NLKNguyen/grading-app/releases)-->
+
+
 Cross-platform (offline/standalone) desktop application for grading students' assignments. Click & Run -- no additional softwares needed.
 
+## Download prebuilt distributions
+=> [https://github.com/NLKNguyen/grading-app/releases](https://github.com/NLKNguyen/grading-app/releases)
+
+Available for **macOS** 64bit, **Linux** 32/64bit, and **Windows** 32/64bit
 
 ## Screenshots
 
