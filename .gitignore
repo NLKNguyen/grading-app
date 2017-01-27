@@ -1,0 +1,9 @@
+bower_components/
+node_modules/
+test.js
+docs/
+build/
+nwjs/
+nwjs-sdk/
+release/
+npm-debug.log

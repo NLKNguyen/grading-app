@@ -1,0 +1,200 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+
+    <div class="mdl-layout__header-row">
+
+      <nav class="mdl-navigation menu-bar" style="margin-left:-55px !important;">
+        <div class=" mdl-typography--title">{{ vm.databaseName }}</div>
+      </nav>
+
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+
+      <!-- Navigation -->
+      <button id="menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">more_vert</i>
+      </button>
+
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-lower-right">
+        <li class="mdl-menu__item mdl-button--file" style="padding:0;">
+          <div layout="row" layout-align="space-between center">
+            <div style="padding-left:15px; padding-right:15px;">
+              Open Database
+              <input id="uploadBtn"  type="file"  accept=".json" onchange="angular.element(this).scope().vm.onSelectDatabase(this)" />
+            </div>
+            <div style="padding-right:10px;" class="mdl-color-text--grey-400">
+              .json
+            </div>
+          </div>
+        </li>
+
+        <li class="mdl-menu__item mdl-button--file" style="padding:0;">
+          <div layout="row" layout-align="space-between center">
+            <div style="padding-left:15px; padding-right:15px;">
+              Create New Database
+              <input type="file" accept=".json" nwsaveas onchange="angular.element(this).scope().vm.onSelectDatabase(this)" />
+            </div>
+            <div style="padding-right:10px;" class="mdl-color-text--grey-400">
+              .json
+            </div>
+          </div>
+        </li>
+
+        <li ng-disabled="vm.databaseName === ''" class="mdl-menu__item mdl-button--file" style="padding:0;">
+          <div layout="row" layout-align="space-between center">
+            <div style="padding-left:15px; padding-right:15px;">
+              Import Students
+              <input type="file" accept=".csv"  onchange="angular.element(this).scope().vm.onImportStudentsFromCsv(this)" />
+            </div>
+            <div style="padding-right:10px;" class="mdl-color-text--grey-400">
+              .csv
+            </div>
+          </div>
+        </li>
+
+        <!-- <li class="mdl-menu__item mdl-button--file" style="padding:0;">
+          <div layout="row" layout-align="space-between center">
+            <div style="padding-left:15px; padding-right:15px;">
+              Export Criteria
+              <input type="file" accept=".json" nwsaveas onchange="angular.element(this).scope().vm.onExportCriteria(this)" />
+            </div>
+            <div style="padding-right:10px;" class="mdl-color-text--grey-400">
+              .json
+            </div>
+          </div>
+        </li> -->
+        <li ng-disabled="vm.databaseName === ''"  class="mdl-menu__item mdl-button--file" style="padding:0;">
+          <div layout="row" layout-align="space-between center">
+            <div style="padding-left:15px; padding-right:15px;">
+              Import Criteria
+              <input id="uploadBtn"  type="file"  accept=".json" onchange="angular.element(this).scope().vm.onImportCriteriaFromJson(this)" />
+            </div>
+            <div style="padding-right:10px;" class="mdl-color-text--grey-400">
+              .json
+            </div>
+          </div>
+        </li>
+
+        <li ng-disabled="vm.databaseName === ''" class="mdl-menu__item mdl-button--file" style="padding:0;"  ng-click="vm.onExportCriteriaToJson()">
+          <div layout="row" layout-align="space-between center">
+            <div style="padding-left:15px; padding-right:15px;">
+              Export Criteria
+            </div>
+            <div style="padding-right:10px;" class="mdl-color-text--grey-400">
+              .json
+            </div>
+          </div>
+        </li>
+
+
+        <li ng-disabled="vm.databaseName === ''" class="mdl-menu__item mdl-button--file" style="padding:0;"  ng-click="vm.onExportGradingSheet()">
+          <div layout="row" layout-align="space-between center">
+            <div style="padding-left:15px; padding-right:15px;">
+              Export Grading Sheet
+            </div>
+            <div style="padding-right:10px;" class="mdl-color-text--grey-400">
+              .csv
+            </div>
+          </div>
+        </li>
+
+        <li ng-disabled="vm.databaseName === ''" class="mdl-menu__item mdl-button--file" style="padding:0;"  ng-click="vm.onExportForAnalysis()">
+          <div layout="row" layout-align="space-between center">
+            <div style="padding-left:15px; padding-right:15px;">
+              Export Data for Analysis
+            </div>
+            <div style="padding-right:10px;" class="mdl-color-text--grey-400">
+              .zip
+            </div>
+          </div>
+        </li>
+
+
+        <!--<li ng-disabled="vm.databaseName === ''" class="mdl-menu__item mdl-button--file" style="padding:0;"  ng-click="vm.onSendDataForAnalysis()">
+          <div layout="row" layout-align="space-between center">
+            <div style="padding-left:15px; padding-right:15px;">
+              Send Data for Analysis
+            </div>
+            <div style="padding-right:10px;" class="mdl-color-text--grey-400">
+              http
+            </div>
+          </div>
+        </li>-->
+
+      </ul>
+    </div>
+
+    <div class="mdl-layout__header-row">
+      <div class="mdl-layout-spacer"></div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+      mdl-textfield--floating-label mdl-textfield--align-right">
+      <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+        <i class="material-icons">search</i>
+      </label>
+
+      <div class="mdl-textfield__expandable-holder">
+        <input class="mdl-textfield__input mdl-color--primary-dark " type="text" id="fixed-header-drawer-exp" ng-model="search_query" />
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="mdl-layout__content">
+
+  <div class="page-content mdl-grid mdl-grid--no-spacing " style="margin-bottom:100px;">
+    <!-- Your content goes here -->
+    <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--12-col mdl-color-text--grey-800" style="font-size:12pt;">
+      <thead>
+        <tr>
+          <!--<th>No</th>-->
+          <th class="mdl-data-table__cell--non-numeric">Group</th>
+          <th class="mdl-data-table__cell--non-numeric">Identifier</th>
+          <th class="mdl-data-table__cell--non-numeric">Name
+            <!--<a href="#" ng-click="predicate='first_name'">First Name</a>-->
+          </th>
+          <th class="mdl-data-table__cell--non-numeric">Contact
+            <!--<a href="#" ng-click="predicate='last_name'">Last Name</a>-->
+          </th>
+          <th class="mdl-data-table__cell--non-numeric">Score</th>
+
+          <!--<th class="mdl-data-table__cell&#45;&#45;non-numeric">Section</th>-->
+          <!--<th>Score</th>-->
+        </tr>
+      </thead>
+      <tbody style="cursor: pointer;">
+        <tr ng-repeat="student in vm.students | filter: search_query ">
+          <!--<td>-->
+          <!--{{$index + 1}}-->
+          <!--</td>-->
+
+          <td class="mdl-data-table__cell--non-numeric">
+            <md-checkbox style="margin-top:-4px" aria-label="Mark student to add group" ng-checked="vm.isStudentSelected(student)" ng-hide="student.group_id" ng-click="vm.toggleSelection(student)">
+            </md-checkbox>
+          </td>
+          <td class="mdl-data-table__cell--non-numeric" ng-click="vm.navigateToStudentPageById(student._id)">{{student.identifier}}
+          </td>
+          <td class="mdl-data-table__cell--non-numeric" ng-click="vm.navigateToStudentPageById(student._id)">{{student.name}}
+          </td>
+          <td class="mdl-data-table__cell--non-numeric" ng-click="vm.navigateToStudentPageById(student._id)">{{student.contact}}
+          </td>
+          <td class="mdl-data-table__cell--non-numeric" ng-click="vm.navigateToStudentPageById(student._id)">
+            <div ng-show="student.criterion_ids && student.criterion_ids.length > 0">
+              {{ student.score }}
+            </div>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</main>
+<md-button class="md-fab" id="floating-action" ng-click="vm.makeGroup()">
+  <md-tooltip md-direction="left" style="font-size:11pt;">
+    Make group from selected students
+  </md-tooltip>
+  <md-icon md-font-set="material-icons">check_box</md-icon>
+</md-button>
+
+</div>

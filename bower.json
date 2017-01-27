@@ -1,0 +1,12 @@
+{
+  "name": "grading-app",
+  "version": "0.7.0",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-material": "^1.1.1",
+    "angular-elastic": "^2.5.1",
+    "material-design-lite": "^1.2.1"
+  }
+}

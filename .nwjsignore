@@ -1,0 +1,9 @@
+nwjs/
+nwjs-sdk/
+node_modules/
+bower_components/
+release/
+build/
+*.desktop
+*.command
+

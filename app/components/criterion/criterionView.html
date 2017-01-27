@@ -1,0 +1,135 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <nav class="mdl-navigation menu-bar">
+                <md-button class=" md-icon-button" ng-click="vm.navigateToStudentPage()">
+                    <md-icon ng-style="{color: '#FFFFFF'}" md-font-set="material-icons">arrow_back</md-icon>
+                </md-button>
+
+                <span id="student_name" class=" mdl-typography--title">
+                  {{ vm.isNew ? "Create New Criteria" : "Update Criteria" }}
+                </span>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="mdl-layout__content  ">
+
+        <div class="mdl-grid">
+
+            <div class="mdl-textfield is-focused is-dirty mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+
+
+                <div>
+
+                    <md-content layout-xs="row " style="margin-left:-20px; margin-top:-35px; " layout-padding>
+                        <div style="margin-top:-15px; margin-right:5px; " flex>
+                            <h6 class="mdl-color-text--grey ">
+                                Section
+                            </h6>
+                        </div>
+                        <div style="margin-top: -30px;">
+                            <md-input-container style="max-width:50px ">
+                                <input aria-label="main section " ng-model="vm.section[0] " ng-pattern="/^[0-9]*$/ " />
+                            </md-input-container>
+
+                            <md-icon ng-style="{color: '#E0E0E0'} " md-font-set="material-icons ">keyboard_arrow_right</md-icon>
+
+                            <md-input-container style="max-width:50px ">
+                                <input aria-label="sub section " ng-model="vm.section[1] " ng-pattern="/^[0-9]*$/ " />
+                            </md-input-container>
+                            <md-icon ng-style="{color: '#E0E0E0'} " md-font-set="material-icons ">keyboard_arrow_right</md-icon>
+
+                            <md-input-container style="max-width:50px ">
+                                <input aria-label="secondary sub section " ng-model="vm.section[2] " ng-pattern="/^[0-9]*$/ " />
+                            </md-input-container>
+                        </div>
+
+
+
+                        <!--
+                        <md-input-container style="max-width:50px; margin-top:-30px; ">
+                            <input aria-label="main section " ng-model="vm.section[0] " ng-pattern="/^[0-9]*$/ " />
+                        </md-input-container>
+
+                        <md-input-container style="max-width:50px; margin-top:-30px; ">
+                            <md-icon ng-style="{color: '#E0E0E0'} " md-font-set="material-icons ">keyboard_arrow_right</md-icon>
+                        </md-input-container>
+
+                        <md-input-container style="max-width:50px; margin-top:-30px; ">
+                            <input aria-label="sub section " ng-model="vm.section[1] " ng-pattern="/^[0-9]*$/ " />
+                        </md-input-container>
+
+                        <md-input-container style="max-width:50px; margin-top:-30px; ">
+                            <md-icon ng-style="{color: '#E0E0E0'} " md-font-set="material-icons ">keyboard_arrow_right</md-icon>
+                        </md-input-container>
+
+                        <md-input-container style="max-width:50px; margin-top:-30px; ">
+                            <input aria-label="secondary sub section " ng-model="vm.section[2] " ng-pattern="/^[0-9]*$/ " />
+                        </md-input-container>-->
+
+
+                    </md-content>
+
+                    <!--<md-input-container>
+                        <input aria-label="main section " ng-model="vm.section[0] " ng-pattern="/^[0-9]*$/ " />
+                    </md-input-container>
+
+                    <md-icon ng-style="{color: '#E0E0E0'} " md-font-set="material-icons ">keyboard_arrow_right</md-icon>
+
+                    <md-input-container>
+                        <input aria-label="sub section " ng-model="vm.section[1] " ng-pattern="/^[0-9]*$/ " />
+                    </md-input-container>
+
+                    <md-icon ng-style="{color: '#E0E0E0'} " md-font-set="material-icons ">keyboard_arrow_right</md-icon>
+
+                    <md-input-container>
+                        <input aria-label="secondary sub section " ng-model="vm.section[2] " ng-pattern="/^[0-9]*$/ " />
+                    </md-input-container>-->
+                </div>
+
+
+                <h6 class="mdl-color-text--grey " style="margin-top:0px; ">Description</h6>
+                <textarea msd-elastic ng-model="vm.description " class="mdl-textfield__input " style="font-size:12pt;font-family: 'Roboto', 'Helvetica', 'Arial',sans-serif; white-space:pre-wrap; ">
+        </textarea>
+
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col ">
+                <h6 class="mdl-color-text--grey " style="margin-top:-20px; ">Points</h6>
+                <input ng-model="vm.points " class="mdl-textfield__input " type="text " id="weight " style="font-size:15pt; " pattern="^([+-](?=\.?\d))?(\d+)?(\.\d+)? " />
+                <span class="mdl-textfield__error " style="font-size:12pt; ">Numeric value only, e.g. 1, -2, 3.45</span>
+            </div>
+
+
+            <div class="mdl-cell mdl-cell--12-col " align="center ">
+                <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent " ng-click="vm.saveIt() " ng-disabled="vm.isDataNotValid() ">
+          <span class="mdl-typography--subhead ">
+            {{ vm.isNew ? "Create " : "Update " }}
+          </span>
+        </button>
+            </div>
+
+
+            <div class="mdl-cell mdl-cell--12-col " style="margin-top:50px; " ng-hide="vm.isNew ">
+                <div class="mdl-grid mdl-grid--no-spacing ">
+                    <md-checkbox ng-model="deletionConfirm ">
+                        <div style="padding-top:5px">
+                            I want to delete this criteria.
+                        </div>
+                    </md-checkbox>
+
+                    <div class="mdl-layout-spacer "></div>
+                    <md-button ng-disabled="!deletionConfirm " class="md-raised md-primary " ng-click="vm.deleteIt() ">Delete
+                    </md-button>
+
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+</div>

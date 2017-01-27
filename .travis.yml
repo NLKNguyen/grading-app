@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - "6"
+
+script:
+  - sh build-script.sh
+
+sudo: required
+services:
+  - docker
+
+before_deploy:
+  - docker run --rm -v $(pwd):/mnt nlknguyen/nwjs-project --package --name="grading-app-${TRAVIS_TAG}"
+
+deploy:
+  provider: releases
+  api_key:
+    secure: pU6Db28XSNHNcq3UCHi7pLW9Rs5WbJN1v/dEbmw4lGvbuazU1SM1RUxo6zF16BluwCmAIiN2z6y+czaqM+vBAFSGxngOMaMkoAyxP4BUAEE34cdviaQz9+4YWh7n7urfKOwpo2fgKB3ttclyoNJ4xiuDksLoo8hHRoweVDhPG9VxDv3LAFvPN6TRsomeFj+DQm9LDQ+4P9zCBOaEC0YzEAFz/NTQY/2GYlcUn0faoadEAFSQwwgSoze8WZGI4qxh2KlLI8hXBARKk3YzXFPUWigP7V5Eds6Xs7tofty5Nfop+eJYl+EOjJNx2N4L5UJ7MkEHVIl9qstoBLYeXPoIH8OOA6R7hPil8WLpOO04bVAE2OlTFp0RZMDqF9KyWvunqQK1N0DMM/hnjBa07UcIfpuBuHcJvntVjNbDUhTTbXVwY4h1CGn+cG5rXguK1U7I7ARwDEk/dMVfumtgr8pspA3tdoH67px1nKv7HnZeqQrMi160TLqTeKrOZfWOeW94GRofaPWVFAhv9HJdxu6v2o3C3d72IA/0yut2QcHP42NGYiqMHCirYGi1oMNtthS69eO9UOSYK7MX2hFxvvOOUvAaVS2l0sAd26mtjhNv+kHTbr/8IV8Lk87dnyon4wmw5qQGmRcMM15sriF+MPofnE0JdEG+GhlkYuD92a1P9i4=
+  file_glob: true
+  file: "release/*.zip"
+  overwrite: true
+  skip_cleanup: true  
+  on:
+    tags: true
+    repo: NLKNguyen/grading-app

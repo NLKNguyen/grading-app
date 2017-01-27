@@ -1,0 +1,58 @@
+{
+  "name": "grading-app",
+  "version": "0.7.0",
+  "description": "Cross-platform desktop application for grading students' works based on customizable criteria",
+  "main": "index.html",
+  "private": true,
+  "keywords": [
+    "desktop",
+    "nwjs",
+    "classroom",
+    "grading",
+    "linux",
+    "mac",
+    "windows"
+  ],
+  "window": {
+    "frame": true,
+    "toolbar": false,
+    "resizable": true,
+    "width": 900,
+    "height": 600,
+    "min_width": 500,
+    "min_height": 600,
+    "position": "center",
+    "icon": "assets/icon/success.png"
+  },  
+  "devDependencies": {
+    "faker": "^3.1.0",
+    "nw-dev": "^3.0.0"
+  },
+  "dependencies": {
+    "babel": "^5.8.23",
+    "bower": "^1.7.9",
+    "csvtojson": "^0.4.3",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.3.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-ngdocs": "^0.2.13",
+    "gulp-run": "^1.6.12",
+    "gulp-sourcemaps": "^1.6.0",
+    "json2csv": "^3.1.0",
+    "jszip": "^3.1.0",
+    "lodash": "^3.10.1",
+    "moment": "^2.11.2",
+    "nedb": "^1.5.0"
+  },
+  "scripts": {
+    "bower-install": "bower install",
+    "gulp-transpile" : "gulp transpile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NLKNguyen/grading-app"
+  },
+  "author": "Nikyle Nguyen",
+  "license": "MIT"
+}
